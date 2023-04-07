@@ -1,19 +1,19 @@
 {
   "schema_version": "v1",
-  "name_for_model": "retrieval",
-  "name_for_human": "Retrieval Plugin",
-  "description_for_model": "Plugin for searching through the user's documents (such as files, emails, and more) to find answers to questions and retrieve relevant information. Use it whenever a user asks something that might be found in their personal information.",
-  "description_for_human": "Search through your documents.",
+  "name_for_model": "Codify_legislation_database",
+  "name_for_human": "Codify Canadian Database Laws",
+  "description_for_model": "This is an up to date legislative database containing all Federal legislation for Canada. It contains all the federal statutes and regulations for Canada. Use this tool to get up to date information about Canadian laws, to read their contents, and to answer questions about Canadian legislation. Do not use it for any queries that do not pertain to Canadian law.",
+  "description_for_human": "An up-to-date database for Canadian legislation.",
   "auth": {
     "type": "user_http",
     "authorization_type": "bearer"
   },
   "api": {
     "type": "openapi",
-    "url": "https://your-app-url.com/.well-known/openapi.yaml",
+    "url": "https://coral-app-4h7ig.ondigitalocean.app/.well-known/openapi.yaml",
     "has_user_authentication": false
   },
-  "logo_url": "https://your-app-url.com/.well-known/logo.png",
-  "contact_email": "hello@contact.com", 
-  "legal_info_url": "http://example.com/legal-info"
+  "logo_url": "https://coral-app-4h7ig.ondigitalocean.app/.well-known/logo.png",
+  "contact_email": "hello@coral-app-4h7ig.ondigitalocean.app.com", 
+  "legal_info_url": "https://coral-app-4h7ig.ondigitalocean.app/legal-info"
 }
