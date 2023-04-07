@@ -141,7 +141,7 @@ class PineconeDataStore(DataStore):
                 metadata = result.metadata
                 # Remove document id and text from metadata and store it in a new variable
                 metadata_without_text = (
-                    {key: value for key, value in metadata.items() if key != "text"}
+                    {key: value for key, value in metadata.items() if key != "legislationText"}
                     if metadata
                     else None
                 )
@@ -149,16 +149,16 @@ class PineconeDataStore(DataStore):
                 # If the source is not a valid Source in the Source enum, set it to None
                 if (
                     metadata_without_text
-                    and "source" in metadata_without_text
-                    and metadata_without_text["source"] not in Source.__members__
+                    and "textURL" in metadata_without_text
+                    and metadata_without_text["textURL"] not in Source.__members__
                 ):
-                    metadata_without_text["source"] = None
+                    metadata_without_text["textURL"] = None
 
                 # Create a document chunk with score object with the result data
                 result = DocumentChunkWithScore(
                     id=result.id,
                     score=score,
-                    text=metadata["text"] if metadata and "text" in metadata else None,
+                    text=metadata["legislationText"] if metadata and "legislationText" in metadata else None,
                     metadata=metadata_without_text,
                 )
                 query_results.append(result)
